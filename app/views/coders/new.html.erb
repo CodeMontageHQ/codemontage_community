@@ -1,0 +1,20 @@
+<h1>Sign up</h1>
+
+<%= simple_form_for @coder do |c| %>
+  <% if @coder.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid.</h2>
+      <ul>
+        <% for message in @coder.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= c.input :email %>
+  <%= c.input :password %>
+  <%= c.input :password_confirmation %>
+
+  <%= c.submit %>
+<% end %>

@@ -1,5 +1,10 @@
 CodeMontage::Application.routes.draw do
 
+  devise_for :coders
+
+  get "sign_up" => "coders#new", as: 'sign_up'
+  resources :coders
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config

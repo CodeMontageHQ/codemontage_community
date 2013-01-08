@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(:version => 20130101214036) do
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
   create_table "coders", :force => true do |t|
-    t.string   "email"
+    t.string   "email",                  :default => "", :null => false
     t.string   "password_hash"
     t.string   "password_salt"
     t.datetime "created_at",                             :null => false
